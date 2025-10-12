@@ -24,7 +24,7 @@ import objectrepository.HomePage;
 
 
   //Test class to validate Campaign Creation module
-  //Extends BasePage to inherit browser setup, login & logout
+  //Extends BasePage to inherit browser setup, login & logout-from app
 
 @Listeners(genericutility.ListenerImplementation.class)
 public class CreateCampaignTest extends BasePage {
