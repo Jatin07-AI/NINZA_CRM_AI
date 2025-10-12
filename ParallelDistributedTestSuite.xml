@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="parallelDistributedTestSuite">
+<listeners>
+<listener class-name="genericutility.ListenerImplementation"></listener>
+</listeners>
+    
+  <test thread-count="1" parallel="tests" name="Test1">
+  <parameter name="Browser" value="chrome"></parameter>
+    <classes>
+      <class name="campaigntest.CreateCampaignTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  
+  <test thread-count="1" parallel="tests" name="Test2">
+  <parameter name="Browser" value="edge"></parameter>
+    <classes>
+      <class name="contacttest.CreateContactTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- parallelDistributedTestSuite -->
