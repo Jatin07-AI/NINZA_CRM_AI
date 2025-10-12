@@ -22,10 +22,10 @@ import objectrepository.CampaignsPage;
 import objectrepository.CreateCampaignPage;
 import objectrepository.HomePage;
 
-/**
- * Test class to validate Campaign Creation module
- * Extends BasePage to inherit browser setup, login & logout
- */
+
+  //Test class to validate Campaign Creation module
+  //Extends BasePage to inherit browser setup, login & logout
+
 @Listeners(genericutility.ListenerImplementation.class)
 public class CreateCampaignTest extends BasePage {
 	
