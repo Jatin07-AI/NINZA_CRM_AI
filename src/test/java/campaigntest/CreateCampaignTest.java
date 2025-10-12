@@ -30,9 +30,9 @@ import objectrepository.HomePage;
 public class CreateCampaignTest extends BasePage {
 	
 
-	/**
-	 * Create Campaign with Expected Close Date
-	 */
+	
+	 // Create Campaign with Expected Close Date
+	 
 	@Test(groups = {"smoke","regression"})
 	public void CreateCampaignWithExpectedCloseDatetest() throws Throwable {
 		
