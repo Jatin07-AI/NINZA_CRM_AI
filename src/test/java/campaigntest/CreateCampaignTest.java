@@ -91,7 +91,7 @@ public class CreateCampaignTest extends BasePage {
 
 		// Navigate to campaign creation
 		CampaignsPage cp = new CampaignsPage(driver);
-		cp.getAddCreateCampaignBTN().click();
+		wlib.safeClick(driver, cp.getAddCreateCampaignBTN());
 		
 		// Fill form
 		CreateCampaignPage ccp = new CreateCampaignPage(driver);
@@ -123,7 +123,7 @@ public class CreateCampaignTest extends BasePage {
 		// Navigate to campaign section
 		CampaignsPage cp = new CampaignsPage(driver);
 		cp.getCamaignLink().click();
-		cp.getAddCreateCampaignBTN().click();
+		wlib.safeClick(driver, cp.getAddCreateCampaignBTN());
 
 		// Fill form
 		CreateCampaignPage ccp = new CreateCampaignPage(driver);
