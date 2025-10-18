@@ -46,7 +46,7 @@ public class CreateContactTest extends BasePage {
 				//CreateContact
 				hp.getContactsLink().click();
 				ContactsPage contactPage=new ContactsPage(driver);
-				contactPage.getAddCreateContactBTN().click();
+				wlib.safeClick(driver, contactPage.getAddCreateContactBTN());
 				CreateContactPage createContactPage=new CreateContactPage(driver);
 				createContactPage.getOrganizationNameTF().sendKeys(ORGANIZATION_NAME);
 				createContactPage.getTitleTF().sendKeys(TITLE);
