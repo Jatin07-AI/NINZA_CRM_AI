@@ -62,8 +62,7 @@ public HomePage(WebDriver driver) {
 	public void logOut() {
 		wb.waitForVisibilityOfWebElement(driver, userIcon);
 		wb.mouseHoverOnWebElement(driver, userIcon);
-		wb.waitForVisibilityOfWebElement(driver, logoutBtn);
-		wb.clickOnWebElement(driver, logoutBtn);
+		wb.safeClick(driver, logoutBtn);
 	}
 	
 }
