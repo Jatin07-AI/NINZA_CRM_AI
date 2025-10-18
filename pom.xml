@@ -13,6 +13,13 @@
       <artifactId>selenium-java</artifactId>
       <version>4.34.0</version>
     </dependency>
+    
+     <dependency> <groupId>org.projectlombok</groupId> 
+    <artifactId>lombok</artifactId> 
+    <version>1.18.32</version>
+     <!-- check latest version -->
+      <scope>provided</scope>
+       </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
     <dependency>

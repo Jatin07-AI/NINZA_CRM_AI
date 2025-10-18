@@ -53,7 +53,8 @@ public class CreateCampaignTest extends BasePage {
 		// =========================
 		// 3. NAVIGATE TO CREATE CAMPAIGN
 		// =========================
-		cp.getCamaignLink().click();           // Click Campaign link
+		cp.getCamaignLink().click();  // Click Campaign link
+		wlib.waitForVisibilityOfWebElement(driver, cp.getAddCreateCampaignBTN());
 		cp.getAddCreateCampaignBTN().click();  // Click on "Add/Create Campaign"
 	 
 		// =========================
