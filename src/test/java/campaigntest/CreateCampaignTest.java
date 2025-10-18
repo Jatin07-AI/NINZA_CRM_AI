@@ -106,6 +106,7 @@ public class CreateCampaignTest extends BasePage {
 		Assert.assertTrue(hp.getToastMSG().getText().contains(CampaignName));
 		wlib.waitForVisibilityOfWebElement(driver, hp.getCloseToastMSG());
 		hp.getCloseToastMSG().click();
+		System.out.println("done");
 	}
 		
 	/**
