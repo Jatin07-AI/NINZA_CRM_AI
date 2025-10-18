@@ -4,9 +4,13 @@ import java.io.File;
 import java.time.Duration;
 import java.util.Set;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -16,6 +20,37 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebDriverUtility {
+	
+	 /**
+     * Safe click on element:
+     * 1. Waits until clickable
+     * 2. Scrolls into view
+     * 3. Normal click, fallback to JS click if intercepted
+     */
+    public void safeClick(WebDriver driver,WebElement element) {
+        try {
+            WebDriverWait wait = new WebDriverWait( driver, Duration.ofSeconds(10));
+            WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(element));
+
+            // Scroll into view
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+
+            try {
+                // Try normal click
+                element.click();
+                System.out.println("Clicked on element: " + element);
+            } catch (ElementClickInterceptedException e) {
+                // Fallback to JS click
+                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+                System.out.println("Clicked on element using JS: " + element);
+            }
+
+        } catch (TimeoutException e) {
+            System.out.println("Element not clickable after 10 seconds: " + element);
+        } catch (NoSuchElementException e) {
+            System.out.println("Element not found: " + element);
+        }
+    }
 
 	public void implicitlyWait(WebDriver driver) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

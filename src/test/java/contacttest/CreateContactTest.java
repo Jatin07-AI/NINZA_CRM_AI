@@ -30,7 +30,7 @@ public class CreateContactTest extends BasePage {
 				// Create Campaign with Mandatory Fields
 				CampaignsPage cp = new CampaignsPage(driver);
 				wlib.waitForVisibilityOfWebElement(driver, cp.getAddCreateCampaignBTN());
-				cp.getAddCreateCampaignBTN().click();
+				wlib.safeClick(driver, cp.getAddCreateCampaignBTN());
 	
 				CreateCampaignPage ccp = new CreateCampaignPage(driver);
 				ccp.getCampaignName().sendKeys(CAMPAIGN_NAME);
